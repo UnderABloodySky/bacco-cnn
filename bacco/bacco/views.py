@@ -2,6 +2,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from .models import MyModelPhoto
 import os
+from predict import predict
 
 def my_endpoint(request):
     return HttpResponse("¡Hi world! This is baccos")
@@ -20,6 +21,8 @@ def upload_photo(request):
         with open(photo_path, 'wb') as destination:
             for chunk in photo.chunks():
                 destination.write(chunk)
-        return JsonResponse({'message': 'Foto cargada exitosamente'})
+
+        beverage = predict(photo, photo_path)
+        return JsonResponse({'message': beverage})
     else:
         return JsonResponse({'error': 'No se proporcionó ninguna foto en la solicitud'}, status=400)
