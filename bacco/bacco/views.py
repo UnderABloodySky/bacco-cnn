@@ -2,7 +2,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from .models import MyModelPhoto
 import os
-from predict import predict
+from .predict import predict
 
 def my_endpoint(request):
     return HttpResponse("¡Hi world! This is baccos")
