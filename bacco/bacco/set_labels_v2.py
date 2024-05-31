@@ -98,9 +98,9 @@ def preprocess_function(imagen):
     return img
 
 # Ruta de la folder que contiene las imágenes de los beverages
-imgs_folder = "./data/"
-train_imgs_folder = "./data/fotos/"
-validate_imgs_folder = "./data/fotos_validate/"
+imgs_folder = "D:/UNQUI/TIP/bacco red neuronal/script dataset/data"
+train_imgs_folder = "D:/UNQUI/TIP/bacco red neuronal/script dataset/data/fotos/"
+validate_imgs_folder = "D:/UNQUI/TIP/bacco red neuronal/script dataset/data/fotos_validate/"
 
 data = []
 validate_data = []
@@ -322,7 +322,7 @@ print('Test accuracy:', test_acc)
 # plt.show()
 
 to_predict = []
-photos_folder_path = "./to_predict/"
+photos_folder_path = "D:/UNQUI/TIP/bacco red neuronal/script dataset/to_predict/"
 for img_file in os.listdir(photos_folder_path):
     # Se lee la imagen
     img = cv2.imread(os.path.join(photos_folder_path, img_file))
