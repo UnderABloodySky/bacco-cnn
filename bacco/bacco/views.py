@@ -23,7 +23,7 @@ def upload_photo(request):
                 destination.write(chunk)
 
         beverage = predict(photo, photo_path)
-        return JsonResponse({'message': beverage})
+        return JsonResponse({'message': beverage}, status=200)
     else:
         return JsonResponse({'error': 'No se proporcionó ninguna foto en la solicitud'}, status=400)
 
