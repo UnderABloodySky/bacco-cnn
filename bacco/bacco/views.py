@@ -31,9 +31,9 @@ def upload_photo(request):
 
 @csrf_exempt
 def upload_photo_for_retrain(request):
-    if request.method == 'POST' and request.FILES.get('photo') and request.FILES.get('beverage'):
+    if request.method == 'POST' and request.FILES.get('photo') and request.POST.get('beverage'):
         photo = request.FILES['photo']
-        beverage = request.FILES['beverage']
+        beverage = request.POST['beverage']
         current_directory = os.path.dirname(os.path.abspath(__file__))
         photo_folder_path = os.path.join(current_directory, 'retrain')
         final_path = f'{photo_folder_path}/{beverage}'
