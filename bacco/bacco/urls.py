@@ -20,7 +20,8 @@ from . import views
 
 urlpatterns = [
     path('bacco/', views.my_endpoint, name='my_endpoint'),
-    path('upload-photo', views.upload_photo, name='upload_photo')
+    path('upload-photo', views.upload_photo, name='upload_photo'),
+    path('upload-photo-for-retrain', views.upload_photo_for_retrain, name='upload_photo_for_retrain')
 ]
 
 
